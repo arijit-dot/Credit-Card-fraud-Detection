@@ -1,14 +1,13 @@
-
 # Credit Card Fraud Detection
 
 ## 📌 Project Overview
-This project implements a machine learning-based system to detect fraudulent credit card transactions. The dataset is highly imbalanced, making fraud detection a challenging task. Various models such as Logistic Regression, Random Forest, Decision Trees, and XGBoost were applied and evaluated on metrics like Precision, Recall, F1-score, and AUC-ROC.
+This project applies machine learning techniques to detect fraudulent credit card transactions. Since fraud cases represent less than 0.2% of all transactions, the dataset is highly imbalanced, making the problem challenging. The models are evaluated on **Precision, Recall, F1-score, and AUC-ROC**, as accuracy alone is not meaningful in such cases.
 
 ## 📂 Dataset
-- Dataset: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+- Source: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 - Transactions: 284,807
-- Fraud cases: 492 (~0.17% of total)
-- Features are anonymized (V1–V28) plus `Time`, `Amount`, and `Class` (target variable).
+- Fraud cases: 492 (~0.17%)
+- Features are anonymized (V1–V28) + `Time`, `Amount`, and `Class` (target variable).
 
 ## ⚙️ Installation
 ```bash
@@ -16,23 +15,22 @@ git clone https://github.com/yourusername/credit-card-fraud-detection.git
 cd credit-card-fraud-detection
 pip install -r requirements.txt
 
-🔍 Methodology
 
-Data Preprocessing & Scaling
+Methodology
 
-Handling Imbalanced Data (SMOTE / Undersampling)
+Data Preprocessing (scaling, cleaning)
+
+Handling Class Imbalance
 
 Exploratory Data Analysis (EDA)
 
 Model Training:
 
-Logistic Regression
+Logistic Regression (LogisticRegression)
 
-Decision Tree
+Random Forest (RandomForestClassifier)
 
-Random Forest
-
-XGBoost
+Gradient Boosting (GradientBoostingClassifier)
 
 Model Evaluation:
 
@@ -40,12 +38,12 @@ Confusion Matrix
 
 Precision, Recall, F1-Score
 
-ROC-AUC
+ROC-AUC Curve
 
----->> Results
+📊 Results
 
-Random Forest & XGBoost achieved the best detection performance.
+Gradient Boosting and Random Forest achieved the best detection performance.
 
-Logistic Regression provided interpretable insights.
+Logistic Regression provided interpretable insights but lower recall.
 
-Precision-Recall tradeoff is highlighted due to high imbalance.
+Highlighted the precision-recall tradeoff due to high imbalance.
