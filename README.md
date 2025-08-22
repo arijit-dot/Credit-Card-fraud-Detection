@@ -1,13 +1,11 @@
 # Credit Card Fraud Detection
 
-## 📌 Project Overview
-This project applies machine learning techniques to detect fraudulent credit card transactions. Since fraud cases represent less than 0.2% of all transactions, the dataset is highly imbalanced, making the problem challenging. The models are evaluated on **Precision, Recall, F1-score, and AUC-ROC**, as accuracy alone is not meaningful in such cases.
+## 📌 Overview
+Machine learning pipeline to detect fraudulent credit card transactions in a highly imbalanced dataset. Focus is on handling class imbalance and evaluating with metrics that matter for fraud detection.
 
 ## 📂 Dataset
-- Source: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
-- Transactions: 284,807
-- Fraud cases: 492 (~0.17%)
-- Features are anonymized (V1–V28) + `Time`, `Amount`, and `Class` (target variable).
+- Source: Kaggle Credit Card Fraud Detection (anonymized features V1–V28 + `Time`, `Amount`, target `Class`)
+- Fraud prevalence ≈ 0.17% (extreme imbalance)
 
 ## ⚙️ Installation
 ```bash
@@ -15,16 +13,22 @@ git clone https://github.com/yourusername/credit-card-fraud-detection.git
 cd credit-card-fraud-detection
 pip install -r requirements.txt
 
+▶️ Usage
+jupyter notebook credit_card_Fraud_detection.ipynb
 
-Methodology
+🔍 Methodology
 
-Data Preprocessing (scaling, cleaning)
+Data preprocessing (scaling/prep)
 
-Handling Class Imbalance
+Class-imbalance handling (resampling/balanced splits)
 
-Exploratory Data Analysis (EDA)
+Exploratory data analysis
 
-Model Training:
+Model training and comparison
+
+Evaluation with classification report
+
+🤖 Models Implemented
 
 Logistic Regression (LogisticRegression)
 
@@ -32,18 +36,16 @@ Random Forest (RandomForestClassifier)
 
 Gradient Boosting (GradientBoostingClassifier)
 
-Model Evaluation:
+Notebook also includes balanced variants (e.g., logistic_model_b, rf_b, gbc_b).
 
-Confusion Matrix
+🧪 Evaluation Metrics
 
-Precision, Recall, F1-Score
+Precision, Recall, F1-score, Support (from classification_report)
 
-ROC-AUC Curve
+Emphasis on Recall (catching fraud) with acceptable Precision (reducing false alarms)
 
-📊 Results
+📊 Results (example summary)
 
-Gradient Boosting and Random Forest achieved the best detection performance.
+Ensemble methods (Random Forest, Gradient Boosting) outperform Logistic Regression on recall/F1.
 
-Logistic Regression provided interpretable insights but lower recall.
-
-Highlighted the precision-recall tradeoff due to high imbalance.
+Logistic Regression remains useful for interpretability and as a baseline.
